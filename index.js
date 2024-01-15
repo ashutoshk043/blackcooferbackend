@@ -14,7 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // mongodb connection
-const url = "mongodb://127.0.0.1/blackcoofer";
+// mongodb+srv://ashutoshk043:Pass1234@cluster0.177hmzy.mongodb.net/blackcoofer
+const url = "mongodb+srv://ashutoshk043:Pass1234@cluster0.177hmzy.mongodb.net/blackcoofer";
  
 try {
   mongoose.connect(url);
