@@ -7,8 +7,15 @@ const filteredData = async(req, res)=>{
 }
 
 const getallfilterValues = async (req, res)=>{
-    const findAllkeys = await records.findOne().select({_id:0})
-    res.send({status:true, message:findAllkeys})
+    
+    let filter={}
+    const filetrsAre = req.body
+    for(let i=0; i<filetrsAre.length; i++){
+        filter[filetrsAre[i].filterkey] = filetrsAre[i].filtervalue
+    }
+
+    const filteredData = await records.find(filter)
+    res.send({status:true, message:filteredData})
 }
 
 
